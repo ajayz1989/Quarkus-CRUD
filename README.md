@@ -58,3 +58,24 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+## Some important quarkus commands to remember
+```shell script
+./mvnw package -Dnative -Dquarkus.native.container-build=true
+
+./mvnw package -Pnative -Dquarkus.native.container-build=true
+
+./mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker
+
+docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-example .
+
+docker build -f src/main/docker/Dockerfile.native --platform linux/amd64 -t quarkus/quarkus-example .
+
+docker buildx build --platform linux/amd64 -f src/main/docker/Dockerfile.native -t quarkus/quarkus-example .
+
+docker run --platform=linux/amd64 -i -p 8080:8080  quarkus/quarkus-example
+
+docker run -i --rm -p 8080:8080 quarkus/quarkus-example
+
+```
+
