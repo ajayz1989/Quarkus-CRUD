@@ -1,4 +1,4 @@
-# Quarkus-Example Project
+# Quarkus-Example Project with DOCKER & KUBERNETES 
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
