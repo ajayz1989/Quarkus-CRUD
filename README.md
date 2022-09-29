@@ -74,8 +74,35 @@ docker build -f src/main/docker/Dockerfile.native --platform linux/amd64 -t quar
 docker buildx build --platform linux/amd64 -f src/main/docker/Dockerfile.native -t quarkus/quarkus-example .
 
 docker run --platform=linux/amd64 -i -p 8080:8080  quarkus/quarkus-example
-
 docker run -i --rm -p 8080:8080 quarkus/quarkus-example
 
+brew install minikube
+minikube start
+Kubectl cluster-info
+minikube docker-env
+
+eval $(minikube -p minikube docker-env)
+minikube dashboard
+minikube status
+minikube service --url quarkus-service
+
+echo -n 'my-string' | base64
+
+Kubectl describe pod
+kubectl delete service postgres-service
+kubectl delete -f quarkus.yaml
+kubectl exec -it pod-name  — /bin/bash.
+kubectl get po -A
+kubectl get nodes
+kubectl get endpoints
+kubectl exec -it containerId   /bin/bash.
+
+psql -U postgres
+
+docker login -u "myusername" -p "mypassword" docker.io
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+docker build -f src/main/docker/Dockerfile.new -t ajayk297/quarkus-example .
+docker port minikube
 ```
 

@@ -36,10 +36,10 @@ public class GreetingResource {
         return greeting;
     }
 
-    @Path("getByAuthor/{message}")
+    @Path("/getByAuthor/{author}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Greeting> getByAuthor(@PathParam("message") String message){
-        return Greeting.find("message", message).list();
+    public List<Greeting> getByAuthor(@PathParam("author") String author){
+        return Greeting.find("author", author).list();
     }
 }
